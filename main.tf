@@ -40,7 +40,7 @@ resource "aws_security_group_rule" "blog_http_in" {
   from_port   = 80
   to_port     = 80
   protocol    = "tcp"
-  cidr_blocks = [172.102.126.162]
+  cidr_blocks = ["172.102.126.162"]
 
   security_group_id = aws_security_group.blog.id
 }
@@ -50,7 +50,7 @@ resource "aws_security_group_rule" "blog_http_out" {
   from_port   = 0
   to_port     = 0
   protocol    = -1
-  cidr_blocks = [0.0.0.0/0]
+  cidr_blocks = ["0.0.0.0/0"]
 
   security_group_id = aws_security_group.blog.id
 }
