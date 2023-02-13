@@ -18,10 +18,10 @@ module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = var.environment.name
-  cidr = "${var.environment.netword_prefix}.0.0/16"
+  cidr = "${var.environment.network_prefix}.0.0/16"
 
   azs             = ["us-west-2a", "us-west-2b", "us-west-2c"]
-  public_subnets  = ["${var.environment.netword_prefix}.101.0/24", "${var.environment.netword_prefix}.102.0/24", "${var.environment.netword_prefix}.103.0/24"]
+  public_subnets  = ["${var.environment.network_prefix}.101.0/24", "${var.environment.network_prefix}.102.0/24", "${var.environment.network_prefix}.103.0/24"]
 
   enable_nat_gateway = true
   enable_vpn_gateway = true
